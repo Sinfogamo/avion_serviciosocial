@@ -10,6 +10,7 @@ String lbNumero;
 class Controller {
   Jugador jugadorActual;
   List<Jugador> jugadoresList = new List<Jugador>();
+  int piedrita;
 
   Controller(int jugadores) {
     for (int i = 0; i < jugadores; i++) {
@@ -58,13 +59,13 @@ class Controller {
     }
   }
 
-  bool ponerPiedrita(int numero) //crear metodo botones cambiar color
+  void ponerPiedrita(int numero) //crear metodo botones cambiar color
   {
-    if (numero == 0) {
-      return false;
-    } else {
-      return true;
-    }
+    piedrita = numero == 0 ? jugadorActual.numBloqueado : -1;
+  }
+
+  bool colorear(int x) {
+    return x == piedrita;
   }
 
   void cambiarTurno() {

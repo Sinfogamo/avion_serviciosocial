@@ -1,3 +1,4 @@
+import 'package:avion_ss/screens/controller.dart';
 import 'package:flutter/material.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
@@ -32,6 +33,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  Controller control;
+  String nombre, numBloqueado;
+  @override
+  void initState() {
+    super.initState();
+    control = new Controller(2);
+    nombre = "jugador";
+    numBloqueado = "0";
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,12 +54,32 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Nombre del jugador: "),
+                  Text(control.jugadorActual.nombre),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Numero Bloqueado: "),
+                  Text(control.jugadorActual.numBloqueado.toString()),
+                ],
+              ),
+              Container(
+                height: 20.0,
+              ),
               ButtonTheme(
                 minWidth: 120.0,
                 height: 100.0,
                 child: RaisedButton(
-                  onPressed: () {},
-                  color: Colors.blue,
+                  onPressed: () {
+                    control.leerPisada(10);
+                    setState(() {});
+                  },
+                  color: control.colorear(10) ? Colors.red : Colors.blue,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40.0),
                   ),
@@ -59,8 +90,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               RaisedButton(
-                onPressed: () {},
-                color: Colors.blue,
+                onPressed: () {
+                  control.leerPisada(9);
+                  setState(() {});
+                },
+                color: control.colorear(9) ? Colors.red : Colors.blue,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(40.0),
                 ),
@@ -73,8 +107,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   RaisedButton(
-                    onPressed: () {},
-                    color: Colors.blue,
+                    onPressed: () {
+                      control.leerPisada(8);
+                      setState(() {});
+                    },
+                    color: control.colorear(8) ? Colors.red : Colors.blue,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(40.0),
                     ),
@@ -87,8 +124,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     indent: 10,
                   ),
                   RaisedButton(
-                    onPressed: () {},
-                    color: Colors.blue,
+                    onPressed: () {
+                      control.leerPisada(7);
+                      setState(() {});
+                    },
+                    color: control.colorear(7) ? Colors.red : Colors.blue,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(40.0),
                     ),
@@ -100,8 +140,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
               RaisedButton(
-                onPressed: () {},
-                color: Colors.blue,
+                onPressed: () {
+                  control.leerPisada(6);
+                  setState(() {});
+                },
+                color: control.colorear(6) ? Colors.red : Colors.blue,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(40.0),
                 ),
@@ -114,8 +157,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   RaisedButton(
-                    onPressed: () {},
-                    color: Colors.blue,
+                    onPressed: () {
+                      control.leerPisada(5);
+                      setState(() {});
+                    },
+                    color: control.colorear(5) ? Colors.red : Colors.blue,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(40.0),
                     ),
@@ -128,8 +174,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     indent: 10,
                   ),
                   RaisedButton(
-                    onPressed: () {},
-                    color: Colors.blue,
+                    onPressed: () {
+                      control.leerPisada(4);
+                      setState(() {});
+                    },
+                    color: control.colorear(4) ? Colors.red : Colors.blue,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(40.0),
                     ),
@@ -141,8 +190,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
               RaisedButton(
-                onPressed: () {},
-                color: Colors.blue,
+                onPressed: () {
+                  control.leerPisada(3);
+                  setState(() {});
+                },
+                color: control.colorear(3) ? Colors.red : Colors.blue,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(40.0),
                 ),
@@ -152,8 +204,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               RaisedButton(
-                onPressed: () {},
-                color: Colors.blue,
+                onPressed: () {
+                  control.leerPisada(2);
+                  setState(() {});
+                },
+                color: control.colorear(2) ? Colors.red : Colors.blue,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(40.0),
                 ),
@@ -163,8 +218,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               RaisedButton(
-                onPressed: () {},
-                color: Colors.blue,
+                onPressed: () {
+                  control.leerPisada(1);
+                  setState(() {});
+                },
+                color: control.colorear(1) ? Colors.red : Colors.blue,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(40.0),
                 ),
@@ -176,7 +234,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
