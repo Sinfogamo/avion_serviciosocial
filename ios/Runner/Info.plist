@@ -3,41 +3,41 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<String>$(DEVELOPMENT_LANGUAGE)</String>
 	<key>CFBundleExecutable</key>
-	<string>$(EXECUTABLE_NAME)</string>
+	<String>$(EXECUTABLE_NAME)</String>
 	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<String>$(PRODUCT_BUNDLE_IDENTIFIER)</String>
 	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
+	<String>6.0</String>
 	<key>CFBundleName</key>
-	<string>avion_ss</string>
+	<String>avion_ss</String>
 	<key>CFBundlePackageType</key>
-	<string>APPL</string>
+	<String>APPL</String>
 	<key>CFBundleShortVersionString</key>
-	<string>$(FLUTTER_BUILD_NAME)</string>
+	<String>$(FLUTTER_BUILD_NAME)</String>
 	<key>CFBundleSignature</key>
-	<string>????</string>
+	<String>????</String>
 	<key>CFBundleVersion</key>
-	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<String>$(FLUTTER_BUILD_NUMBER)</String>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<String>LaunchScreen</String>
 	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
+	<String>Main</String>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
+		<String>UIInterfaceOrientationPortrait</String>
+		<String>UIInterfaceOrientationLandscapeLeft</String>
+		<String>UIInterfaceOrientationLandscapeRight</String>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
+		<String>UIInterfaceOrientationPortrait</String>
+		<String>UIInterfaceOrientationPortraitUpsideDown</String>
+		<String>UIInterfaceOrientationLandscapeLeft</String>
+		<String>UIInterfaceOrientationLandscapeRight</String>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>

@@ -29,21 +29,42 @@ class Controller {
         break;
       case RespuestaTurno.error:
         this.cambiarTurno();
+        showDialog(
+          context: navigatorKey.currentState.overlay.context,
+          builder: (context) {
+            Future.delayed(Duration(seconds: 2), () {
+              Navigator.of(context).pop(true);
+            });
+            return AlertDialog(
+              title: new Text("¡Te has equivocado!"),
+              content: new Text(this.jugadorActual.nombre + " es tu turno."),
+            );
+          },
+        );
         break;
       case RespuestaTurno.avanzar:
         this.cambiarTurno();
+        showDialog(
+          context: navigatorKey.currentState.overlay.context,
+          builder: (BuildContext context) {
+            Future.delayed(Duration(seconds: 2), () {
+              Navigator.of(context).pop(true);
+            });
+            return AlertDialog(
+              title: new Text("Cambio de Turno"),
+              content: new Text(this.jugadorActual.nombre + " es tu turno"),
+            );
+          },
+        );
         break;
       case RespuestaTurno.fin:
         showDialog(
           context: navigatorKey.currentState.overlay.context,
           builder: (BuildContext context) {
-            // return object of type Dialog
             return AlertDialog(
-              title: new Text("Alert Dialog title"),
-              content: new Text(
-                  "El jugador: " + this.jugadorActual.nombre + " gano."),
+              title: new Text("Juego Terminado"),
+              content: new Text(this.jugadorActual.nombre + " gano."),
               actions: <Widget>[
-                // usually buttons at the bottom of the dialog
                 new FlatButton(
                   child: new Text("Close"),
                   onPressed: () {
@@ -85,7 +106,6 @@ class Controller {
   }
 
   void iniciar() {
-    // ignore: unused_element
     for (int i = 0; i < this.jugadoresList.length; i++) {
       this.jugadoresList[i].reiniciar();
     }
