@@ -59,7 +59,7 @@ class _AvionPageState extends State<AvionPage> {
                     control.leerPisada(10);
                     setState(() {});
                   },
-                  color: control.colorear(10) ? Colors.red : Colors.yellow,
+                  color: control.colorear(10) ? Colors.grey : Colors.yellow,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40.0),
                   ),
@@ -74,7 +74,7 @@ class _AvionPageState extends State<AvionPage> {
                   control.leerPisada(9);
                   setState(() {});
                 },
-                color: control.colorear(9) ? Colors.red : Colors.blue,
+                color: control.colorear(9) ? Colors.grey : Colors.blue,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(40.0),
                 ),
@@ -91,7 +91,7 @@ class _AvionPageState extends State<AvionPage> {
                       control.leerPisada(8);
                       setState(() {});
                     },
-                    color: control.colorear(8) ? Colors.red : Colors.green,
+                    color: control.colorear(8) ? Colors.grey : Colors.green,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(40.0),
                     ),
@@ -108,7 +108,7 @@ class _AvionPageState extends State<AvionPage> {
                       control.leerPisada(7);
                       setState(() {});
                     },
-                    color: control.colorear(7) ? Colors.red : Colors.green,
+                    color: control.colorear(7) ? Colors.grey : Colors.green,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(40.0),
                     ),
@@ -124,7 +124,8 @@ class _AvionPageState extends State<AvionPage> {
                   control.leerPisada(6);
                   setState(() {});
                 },
-                color: control.colorear(6) ? Colors.red : Colors.deepOrangeAccent,
+                color:
+                    control.colorear(6) ? Colors.grey : Colors.deepOrangeAccent,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(40.0),
                 ),
@@ -141,7 +142,7 @@ class _AvionPageState extends State<AvionPage> {
                       control.leerPisada(5);
                       setState(() {});
                     },
-                    color: control.colorear(5) ? Colors.red : Colors.green,
+                    color: control.colorear(5) ? Colors.grey : Colors.green,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(40.0),
                     ),
@@ -158,7 +159,7 @@ class _AvionPageState extends State<AvionPage> {
                       control.leerPisada(4);
                       setState(() {});
                     },
-                    color: control.colorear(4) ? Colors.red : Colors.green,
+                    color: control.colorear(4) ? Colors.grey : Colors.green,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(40.0),
                     ),
@@ -174,7 +175,7 @@ class _AvionPageState extends State<AvionPage> {
                   control.leerPisada(3);
                   setState(() {});
                 },
-                color: control.colorear(3) ? Colors.red : Colors.yellow,
+                color: control.colorear(3) ? Colors.grey : Colors.yellow,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(40.0),
                 ),
@@ -188,13 +189,15 @@ class _AvionPageState extends State<AvionPage> {
                   control.leerPisada(2);
                   setState(() {});
                 },
-                color: control.colorear(2) ? Colors.red : Colors.lightBlue,
+                color: control.colorear(2) ? Colors.grey : Colors.lightBlue,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(40.0),
                 ),
                 child: Text(
                   "2",
-                  style: TextStyle(color: Colors.white,),
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
               ),
               RaisedButton(
@@ -202,7 +205,8 @@ class _AvionPageState extends State<AvionPage> {
                   control.leerPisada(1);
                   setState(() {});
                 },
-                color: control.colorear(1) ? Colors.red : Colors.deepOrangeAccent,
+                color:
+                    control.colorear(1) ? Colors.grey : Colors.deepOrangeAccent,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(40.0),
                 ),

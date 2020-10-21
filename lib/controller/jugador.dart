@@ -1,6 +1,7 @@
 import 'package:avion_ss/controller/respuesta_turno.dart';
 
 class Jugador {
+  bool desbloqueado;
   String nombre;
   int numBloqueado;
   List<int> listaRecorrido;
@@ -18,6 +19,7 @@ class Jugador {
   String vuelta4 = "9,7,8,6,4,5,3,2,1,";
 
   Jugador(String nombre) {
+    this.desbloqueado = false;
     this.nombre = nombre;
     this.numBloqueado = 1;
     this.listaRecorridoIda = new List<int>();
@@ -80,10 +82,21 @@ class Jugador {
       }
     }
     // obligar a que el primer salto sea en la primera posicion del listado de vuelta
-    else if (listaRecorridoVuelta.length == 0 && 9 == pisada) {
-      listaRecorridoVuelta.add(pisada);
-      res = RespuestaTurno.correcto;
-    } else if (listaRecorridoVuelta.length > 0 &&
+    else if (listaRecorridoIda.length == 9 &&
+        listaRecorridoVuelta.length == 0) {
+      if (this.numBloqueado != 10 || this.desbloqueado) {
+        if (pisada == 9) {
+          listaRecorridoVuelta.add(pisada);
+          res = RespuestaTurno.correcto;
+        }
+      } else {
+        if (pisada == 10) {
+          this.desbloqueado = true;
+          res = RespuestaTurno.correcto;
+        }
+      }
+    } else if (listaRecorridoIda.length == 9 &&
+        listaRecorridoVuelta.length > 0 &&
         listaRecorridoVuelta.length <= 8) {
       listaRecorridoVuelta.add(pisada);
       String temp = '';
@@ -123,6 +136,7 @@ class Jugador {
     if (res == RespuestaTurno.error || res == RespuestaTurno.avanzar) {
       listaRecorridoIda.clear();
       listaRecorridoVuelta.clear();
+      this.desbloqueado = false;
     }
 
     return res;
@@ -154,6 +168,7 @@ class Jugador {
   }
 
   void reiniciar() {
+    this.desbloqueado = false;
     this.numBloqueado = 1;
     this.listaRecorridoIda = new List<int>();
     this.listaRecorridoVuelta = new List<int>();
